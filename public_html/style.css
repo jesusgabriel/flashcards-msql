@@ -1,0 +1,18 @@
+body{
+  display: flex;
+background-color: lightgray;
+flex-direction: column;
+font-size: 16px;
+align-items: center;
+
+}
+.createnewcard{
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+ input{
+margin: 0.5rem;
+}

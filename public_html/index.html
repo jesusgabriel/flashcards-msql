@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>todos-mysql</title>
+</head>
+
+<body>
+
+    <div class="form-group">
+        <label for="usr">Description:</label>
+        <input type="text" class="form-control" id="usr">
+    </div>
+    <div class="form-group">
+        <label for="sts">Status:</label>
+        <input type="text" class="form-control" id="sts">
+    </div>
+
+    <div class="dropdown">
+        <button id="btn" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Submmit<span class="caret"></span></button>
+        <ul class="dropdown-menu">
+            <li><a href="#">NEW</a></li>
+            <li><a href="#">COMPLETED</a></li>
+            <li><a href="#">STARTED</a></li>
+        </ul>
+    </div>
+
+    <div id="allTable">
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="crossorigin="anonymous"></script>
+    <script>
+
+    $('#btn').click(function() {
+      $.ajax({
+        url: "todos",
+        method: 'POST',
+        success: function() {
+          alert("The data was  POST success");
+          console.log("The data was  POST success")},
+          data: {
+            description: $('#usr').val(),
+            status: $('#sts').val()
+          }
+        });
+      });
+
+      $('#btn').click(function(){
+  $.ajax({
+    url: "http://localhost:9000/todos",
+    method: 'GET',
+    success: function(gt){
+      $('#allTable').html("")
+      gt.forEach(function(list){
+        $('#allTable').append(`<li>${list.description}</li>, <li>${list.status}</li>`)
+      });
+},
+});
+});
+      </script>
+</body>
+
+</html>
