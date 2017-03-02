@@ -23,11 +23,11 @@
 
     <div class="dropdown">
         <button id="btn" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Submmit<span class="caret"></span></button>
-        <ul class="dropdown-menu">
+        <!-- <ul class="dropdown-menu">
             <li><a href="#">NEW</a></li>
             <li><a href="#">COMPLETED</a></li>
             <li><a href="#">STARTED</a></li>
-        </ul>
+        </ul> -->
     </div>
 
     <div id="allTable">
@@ -61,7 +61,7 @@
     success: function(gt){
       $('#allTable').html("")
       gt.forEach(function(list){
-        $('#allTable').append(`<li>${list.description}</li>, <li>${list.status}</li>`)
+        $('#allTable').append(`<li>${list.description}, ${list.status}</li>`)
       });
 },
 });
