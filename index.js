@@ -4,7 +4,7 @@ var connection = mysql.createConnection({
   host:'localhost',
   user:'root',
   password:'',
-  database:'todo'
+  database:'todos'
 });
 var app = express();
 var bodyParser = require('body-parser');
