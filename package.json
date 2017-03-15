@@ -1,11 +1,11 @@
 {
   "name": "flashcards-msql",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "dependencies": {
-    "body-parser": "^1.16.1",
+    "body-parser": "^1.17.1",
     "express": "^4.14.1",
+    "mongoose": "^4.9.0",
     "mysql": "^2.13.0",
     "nodemon": "^1.11.0"
   },
@@ -23,5 +23,6 @@
   "bugs": {
     "url": "https://github.com/jesusgabriel/flashcards-msql/issues"
   },
-  "homepage": "https://github.com/jesusgabriel/flashcards-msql#readme"
+  "homepage": "https://github.com/jesusgabriel/flashcards-msql#readme",
+  "description": ""
 }
